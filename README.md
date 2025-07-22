@@ -1,8 +1,1 @@
-# Habit Tracker App – Seguimiento de hábitos con Python y Streamlit
-
-
-¡Bienvenido a Habit Tracker App!  
-Una aplicación web simple e interactiva que permite a los usuarios registrar sus hábitos diarios, hacer seguimiento de su cumplimiento y visualizar estadísticas de progreso.
-
-
 https://github.com/sregany/habit-tracker/issues/1#issue-3253083184
