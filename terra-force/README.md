@@ -13,6 +13,13 @@ npm run build      # typecheck + build de producción en dist/
 npm run preview    # sirve dist/
 ```
 
+## Despliegue en Vercel
+
+1. Vercel → **Add New… → Project** → importar `sregany/habit-tracker`.
+2. **Root Directory:** `terra-force` (el resto lo toma de `vercel.json`: Vite, `npm run build`, `dist`).
+3. Añadir en *Settings → Environment Variables* las variables `VITE_*` de `.env.example`.
+4. Deploy. Los fotogramas y assets se sirven con caché larga (ver `vercel.json`).
+
 ## Preparación de assets (FFmpeg)
 
 Los fotogramas y las imágenes optimizadas ya están generados y versionados en `public/`.
