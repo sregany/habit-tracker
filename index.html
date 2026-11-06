@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>TERRA FORCE — Excavaciones · Movimiento de tierras · Obra civil</title>
+    <meta name="description" content="Soluciones de excavación, movimiento de tierras y obra civil con precisión y maquinaria especializada." />
+    <meta name="theme-color" content="#171916" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <script>
+      // Precarga del hero sólo si se va a usar la secuencia (no con movimiento reducido)
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        ;[
+          ['fetch', '/frames/terra-force/manifest.json'],
+          ['image', '/frames/terra-force/mobile/frame_0001.webp'],
+        ].forEach(function (r) {
+          var l = document.createElement('link')
+          l.rel = 'preload'
+          l.as = r[0]
+          l.href = r[1]
+          if (r[0] === 'fetch') l.crossOrigin = 'anonymous'
+          document.head.appendChild(l)
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding:2rem;font-family:sans-serif">TERRA FORCE — Excavaciones · Movimiento de tierras · Obra civil. Activa JavaScript para ver la experiencia completa.</p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
