@@ -1,0 +1,131 @@
+@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import 'tailwindcss';
+
+@theme {
+  --color-bone: #f4f3ef;
+  --color-paper: #ffffff;
+  --color-ink: #171916;
+  --color-stone: #777a74;
+  --color-mist: #e5e4df;
+  --color-amber: #d9a52d;
+  --color-amber-deep: #b8861a;
+
+  --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --breakpoint-xs: 26rem;
+}
+
+@layer base {
+  html {
+    background: var(--color-bone);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: auto;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-variation-settings: 'wdth' 100;
+    background: var(--color-bone);
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-amber);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-amber);
+    outline-offset: 3px;
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+@layer components {
+  /* Titulares: grotesca ancha, apretada, mayúsculas */
+  .display {
+    font-variation-settings: 'wdth' 112;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 0.92;
+    text-transform: uppercase;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .hairline {
+    height: 1px;
+    background: currentColor;
+    opacity: 0.18;
+  }
+
+  /* Contenedor editorial */
+  .shell {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 3.5rem);
+    max-width: 1680px;
+  }
+
+  /* Línea que se oculta para animar texto por líneas */
+  .line-mask {
+    display: block;
+    overflow: hidden;
+    /* holgura para tildes y descendentes sin alterar el interlineado */
+    padding-block: 0.14em 0.06em;
+    margin-block: -0.14em -0.06em;
+  }
+  .line-mask > span {
+    display: block;
+    will-change: transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes scrollcue {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}

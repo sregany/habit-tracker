@@ -1,0 +1,23 @@
+{
+  "source": "videos/terra-force-hero.mp4",
+  "sourceWidth": 1280,
+  "sourceHeight": 720,
+  "fps": 24,
+  "generatedAt": "2026-11-06T19:45:40.136Z",
+  "profiles": {
+    "desktop": {
+      "path": "frames/terra-force/desktop/frame_{index}.webp",
+      "pad": 4,
+      "count": 192,
+      "width": 1280,
+      "height": 720
+    },
+    "mobile": {
+      "path": "frames/terra-force/mobile/frame_{index}.webp",
+      "pad": 4,
+      "count": 96,
+      "width": 854,
+      "height": 480
+    }
+  }
+}
